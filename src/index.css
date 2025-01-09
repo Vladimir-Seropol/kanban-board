@@ -1,0 +1,303 @@
+#root {
+  margin: 0 auto;
+}
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-family: Inter;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0.0036em;
+  color: #ffffffde;
+}
+
+h2 {
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.0036em;
+  color: #ffffffde;
+}
+
+input,
+p {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.4000000059604645px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #ffffffde;
+}
+
+input {
+  width: 200px;
+  background: none;
+  border: 1px solid #ffffff80;
+  border-radius: 4px;
+  margin-left: 16px;
+  margin-bottom: 8px;
+}
+
+input:focus {
+  border: 1px solid #0184cf;
+  background: none;
+  outline: none;
+}
+
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+  }
+  
+
+  input[type="date"]::-moz-calendar-picker-indicator {
+    display: none;
+  }
+  
+
+  input[type="date"]::-webkit-input-placeholder {
+    color: transparent;
+  }
+  
+
+label,
+strong {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: -0.4000000059604645px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #ffffff99;
+}
+
+button {
+  cursor: pointer;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  background: none;
+  border-radius: 5px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1920px;
+  min-width: 768px;
+  padding: 64px 40px;
+  background-image: url(/public/image.png);
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.add-task:hover {
+  color: #0184cf;
+}
+
+.header input {
+  margin: 0;
+  padding-left: 64px;
+  width: 336px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+.header input::placeholder {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: -0.4000000059604645px;
+}
+
+.header svg {
+  position: absolute;
+  top: 35px;
+  right: 360px;
+}
+
+.header input:hover {
+  border: 1px solid #0184cf;
+}
+
+.header input:focus {
+  outline: 1px solid #0184cf;
+}
+
+.kanban-board {
+  display: flex;
+  gap: 40px;
+}
+
+.task {
+  max-width: 398px;
+  padding: 16px;
+  gap: 8px;
+  border-radius: 4px;
+  background: #ffffff1a;
+}
+.column {
+  height: 100%;
+  background: #000000b2;
+  padding: 16px 16px 32px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.column-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column-header-icon {
+  display: flex;
+  gap: 4px;
+}
+
+.column-header-icon img{
+  width: 24px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 100%;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.task {
+  max-width: 398px;
+  padding: 16px;
+  gap: 8px;
+  border-radius: 4px;
+  background: #ffffff1a;
+  cursor: grab;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.task:active {
+  cursor: grabbing;
+}
+
+.task.is-dragging {
+  opacity: 0.7;
+  transform: scale(1.05);
+}
+
+.column.droppable-is-over {
+  background-color: #0184cf1a;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.group:hover path {
+  fill: #0184cf;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.modal {
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 100%;
+  position: relative;
+  background-color: #2c2c2c;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.group:hover path,
+.delete-button:hover .delete-icon {
+  fill: #0184cf;
+}
+
+@media screen and (max-width: 1100px) {
+  .container {
+    overflow-x: auto;
+  }
+}
